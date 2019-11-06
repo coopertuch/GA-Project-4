@@ -1,16 +1,16 @@
 {% extends 'workout/base.html' %} {% block content %}
 <h2>
   {{ workout.muscle }}
-  <a href="{% url 'workout_edit' pk=workout.pk %}">(edit)</a>
-  <a href="{% url 'workout_delete' pk=workout.pk %}">(delete)</a>
+  <a href="{% url 'workout_edit' pk=workout.pk %}">[edit]</a>
+  <a href="{% url 'workout_delete' pk=workout.pk %}">[delete]</a>
 </h2>
 
-<h3>Lifts <a href="{% url 'lift_create' %}">(+)</a></h3>
+<h3>Lifts <a href="{% url 'lift_create' %}">[+]</a></h3>
 <ul>
   {% for lift in workout.lifts.all %}
   <li>
     <p>
-      <a href="{% url 'lift_detail' pk=lift.pk %}">{{ lift.lift_name }}</a>
+      <a href="{% url 'lift_detail' pk=lift.pk %}">[ {{ lift.lift_name }} ]</a>
       - Reps: {{ lift.reps }} Weight: {{ lift.weight }}
     </p>
   </li>

@@ -5,11 +5,13 @@
     <link rel="stylesheet" href="{% static 'css/workout.css' %}" />
   </head>
   <body>
-    <h1>Coop's Workouts</h1>
-    <nav>
-      <a href="/">Workouts</a>
-      <a href="/lifts">Lifts</a>
-    </nav>
+    <div class="navigation">
+      <a class="links" href="/"><h1 class="links">Coop's Workouts</h1></a>
+      <nav>
+        <a class="links" href="/">Workouts</a>
+        <a class="links" href="/lifts">Lifts</a>
+      </nav>
+    </div>
     {% block content %} {% endblock %}
   </body>
 </html>
