@@ -3,7 +3,7 @@
 <ul>
   {% for lift in lifts %}
   <li>
-    <a href="{% url 'lift_detail' pk=lift.pk %}">{{ lift.lift_type }}</a>
+    <a href="{% url 'lift_detail' pk=lift.pk %}">{{ lift.lift_name }}</a>
   </li>
   {% endfor %}
 </ul>

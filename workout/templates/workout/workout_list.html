@@ -1,5 +1,5 @@
 {% extends 'workout/base.html' %} {% block content %}
-<h2>Workouts <a href="">(+)</a></h2>
+<h2>Workouts <a href="{% url 'workout_create' %}">(+)</a></h2>
 <ul>
   {% for workout in workouts %}
   <li>

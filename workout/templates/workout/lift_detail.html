@@ -1,5 +1,8 @@
 {% extends 'workout/base.html' %} {% block content %}
-<h2>{{ lift.lift_type }} <a href="">(edit)</a></h2>
-<p>{{ lift.rep }}</p>
+<h2>
+  {{ lift.lift_name }} <a href="{% url 'lift_edit' pk=lift.pk %}">(edit)</a>
+  <a href="{% url 'lift_delete' pk=lift.pk %}">(delete)</a>
+</h2>
+<p>{{ lift.reps }}</p>
 <p>{{ lift.weight }}</p>
 {% endblock %}
