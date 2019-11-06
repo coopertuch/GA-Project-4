@@ -9,9 +9,10 @@
 <ul>
   {% for lift in workout.lifts.all %}
   <li>
-    <a href="{% url 'lift_detail' pk=lift.pk %}">{{ lift.lift_name }}</a>
-    <p>{{ lift.reps }}</p>
-    <p>{{ lift.weight }}</p>
+    <p>
+      <a href="{% url 'lift_detail' pk=lift.pk %}">{{ lift.lift_name }}</a>
+      - Reps: {{ lift.reps }} Weight: {{ lift.weight }}
+    </p>
   </li>
   {% endfor %}
 </ul>
