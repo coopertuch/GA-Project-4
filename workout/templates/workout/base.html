@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Coop's Workouts</title>
+    <link rel="stylesheet" href="{% static 'css/workout.css' %}" />
+  </head>
+  <body>
+    <h1>Coop's Workouts</h1>
+    <nav>
+      <a href="/">Workouts</a>
+      <a href="/lifts">Lifts</a>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

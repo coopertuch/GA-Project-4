@@ -1,0 +1,14 @@
+{% extends 'workout/base.html' %} {% block content %}
+<h2>{{ workout.muscle }} <a href="">(edit)</a></h2>
+
+<h3>Lifts <a href="">(+)</a></h3>
+<ul>
+  {% for lift in workout.lifts.all %}
+  <li>
+    <a href="{% url 'lift_detail' pk=lift.pk %}">{{ lift.lift_type }}</a>
+    <p>{{ lift.rep }}</p>
+    <p>{{ lift.weight }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
