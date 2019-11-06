@@ -25,7 +25,7 @@ def workout_create(request):
         form = WorkoutForm(request.POST)
         if form.is_valid():
             workout = form.save()
-            return redirect('workout_detail', pk=workout.pk)
+            return redirect('/', pk=workout.pk)
     else:
         form = WorkoutForm()
     return render(request, 'workout/workout_form.html', {'form': form})
@@ -37,7 +37,7 @@ def lift_create(request):
         form = LiftForm(request.POST)
         if form.is_valid():
             lift = form.save()
-            return redirect('lift_detail', pk=lift.pk)
+            return redirect('/', pk=lift.pk)
     else:
         form = LiftForm()
     return render(request, 'workout/lift_form.html', {'form': form})
@@ -48,7 +48,7 @@ def workout_edit(request, pk):
         form = WorkoutForm(request.POST, instance=workout)
         if form.is_valid():
             workout = form.save()
-            return redirect('workout_detail', pk=workout.pk)
+            return redirect('/', pk=workout.pk)
     else:
         form = WorkoutForm(instance=workout)
     return render(request, 'workout/workout_form.html', {'form': form})
@@ -59,7 +59,7 @@ def lift_edit(request, pk):
         form = LiftForm(request.POST, instance=lift)
         if form.is_valid():
             workout = form.save()
-            return redirect('lift_detail', pk=lift.pk)
+            return redirect('/', pk=lift.pk)
     else:
         form = LiftForm(instance=lift)
     return render(request, 'workout/lift_form.html', {'form': form})

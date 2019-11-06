@@ -1,19 +1,37 @@
 {% extends 'workout/base.html' %} {% block content %}
-<h2>
-  {{ workout.muscle }}
-  <a href="{% url 'workout_edit' pk=workout.pk %}">[edit]</a>
-  <a href="{% url 'workout_delete' pk=workout.pk %}">[delete]</a>
-</h2>
+<div class="container">
+  <h2>
+    {{ workout.muscle }}
+    <a href="{% url 'workout_edit' pk=workout.pk %}">[edit]</a>
+    <a href="{% url 'workout_delete' pk=workout.pk %}">[delete]</a>
+  </h2>
+  <ul>
+    <li>
+      Breathe in, breathe out during extension, breathe in during return, repeat
+    </li>
+    <li>
+      3 second extension, 1 second hold, 3 second return, 1 second hold, repeat
+    </li>
+    <li>Focus on form, flex target muscle group</li>
+    <li>If you can perform all sets, increase weight by 5</li>
+    <li>
+      If you can almost perform all sets, while keeping good form, maintain
+      weight
+    </li>
+    <li>If you cannot perform all sets, reduce weight by 5</li>
+  </ul>
 
-<h3>Lifts <a href="{% url 'lift_create' %}">[+]</a></h3>
-<ul>
-  {% for lift in workout.lifts.all %}
-  <li>
-    <p>
-      <a href="{% url 'lift_detail' pk=lift.pk %}">[ {{ lift.lift_name }} ]</a>
-      - Reps: {{ lift.reps }} Weight: {{ lift.weight }}
-    </p>
-  </li>
-  {% endfor %}
-</ul>
+  <h3>Lifts <a href="{% url 'lift_create' %}">[+]</a></h3>
+  <ul>
+    {% for lift in workout.lifts.all %}
+    <li>
+      <p>
+        {{ lift.lift_name }} - Reps: {{ lift.reps }} Weight: {{ lift.weight }}
+        <a href="{% url 'lift_edit' pk=lift.pk %}">[edit]</a>
+      </p>
+      <p></p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}
