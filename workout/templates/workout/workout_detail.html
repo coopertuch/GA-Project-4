@@ -1,7 +1,7 @@
 {% extends 'workout/base.html' %} {% block content %}
 <div class="container">
   <h2>
-    {{ workout.name }}'s - {{ workout.muscle }} Workout
+    {{ workout.name }}'s {{ workout.muscle }} Workout
     <a href="{% url 'workout_edit' pk=workout.pk %}">[edit]</a>
     <a href="{% url 'workout_delete' pk=workout.pk %}">[delete]</a>
   </h2>
