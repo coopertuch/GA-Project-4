@@ -10,9 +10,18 @@
       <nav>
         <a class="links" href="/">[ Workouts ]</a>
         <a class="links" href="/lifts">[ Lifts ]</a>
+        {% if user.is_authenticated %}
+        <a class="links" href="{% url 'logout' %}"
+          >[ Log out, {{ user.username }} ]</a
+        >
+        {% else %}
+        <a class="links" href="{% url 'login' %}">[ Login ]</a>
+        <a class="links" href="{% url 'signup' %}">[ Signup ]</a>
+        {% endif %}
         <!-- <a class="links" href="">[ Sign In ]</a> -->
       </nav>
     </div>
+
     {% block content %} {% endblock %}
   </body>
 </html>

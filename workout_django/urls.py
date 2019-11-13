@@ -20,4 +20,5 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('workout.urls')),
+    path('', include('accounts.urls')),
 ]

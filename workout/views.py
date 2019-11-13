@@ -4,6 +4,8 @@ from .forms import WorkoutForm
 
 from .models import Workout, Lift
 
+from django.contrib.auth.decorators import login_required
+
 def workout_list(request):
     workouts = Workout.objects.all()
     return render(request, 'workout/workout_list.html', {'workouts': workouts})
@@ -20,6 +22,7 @@ def lift_detail(request, pk):
     lift = Lift.objects.get(id=pk)
     return render(request, 'workout/lift_detail.html', {'lift': lift})
 
+@login_required
 def workout_create(request):
     if request.method == 'POST':
         form = WorkoutForm(request.POST)
@@ -32,6 +35,7 @@ def workout_create(request):
 
 from .forms import WorkoutForm, LiftForm
 
+@login_required
 def lift_create(request):
     if request.method == 'POST':
         form = LiftForm(request.POST)
@@ -42,6 +46,7 @@ def lift_create(request):
         form = LiftForm()
     return render(request, 'workout/lift_form.html', {'form': form})
 
+@login_required
 def workout_edit(request, pk):
     workout = Workout.objects.get(pk=pk)
     if request.method == "POST":
@@ -53,6 +58,7 @@ def workout_edit(request, pk):
         form = WorkoutForm(instance=workout)
     return render(request, 'workout/workout_form.html', {'form': form})
 
+@login_required
 def lift_edit(request, pk):
     lift = Lift.objects.get(pk=pk)
     if request.method == "POST":
@@ -64,10 +70,12 @@ def lift_edit(request, pk):
         form = LiftForm(instance=lift)
     return render(request, 'workout/lift_form.html', {'form': form})
 
+@login_required
 def workout_delete(request, pk):
     Workout.objects.get(id=pk).delete()
     return redirect('workout_list')
 
+@login_required
 def lift_delete(request, pk):
     Lift.objects.get(id=pk).delete()
     return redirect('lift_list')
