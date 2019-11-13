@@ -5,10 +5,10 @@ class WorkoutForm(forms.ModelForm):
 
     class Meta:
         model = Workout
-        fields = ('muscle',)
+        fields = ('name', 'muscle',)
 
 class LiftForm(forms.ModelForm):
 
     class Meta:
         model = Lift
-        fields = ('lift_name', 'reps', 'weight', 'workout',)
+        fields = ('exercise', 'reps', 'weight', 'workout',)
