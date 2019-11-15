@@ -16,17 +16,15 @@
   </head>
   <body>
     <div class="navigation">
-      <a class="links" href="/"><h1 class="links">WeWorkout</h1></a>
-      <nav>
-        <a class="links" href="/">[ Workouts ]</a>
-        <a class="links" href="/lifts">[ Lifts ]</a>
+      <a class="brand-logo" href="/">WeWorkout</a>
+      <nav class="right hide-on-med-and-down">
+        <a href="/">[ Workouts ]</a>
+        <a href="/lifts">[ Lifts ]</a>
         {% if user.is_authenticated %}
-        <a class="links" href="{% url 'logout' %}"
-          >[ Log out, {{ user.username }} ]</a
-        >
+        <a href="{% url 'logout' %}">[ Log out, {{ user.username }} ]</a>
         {% else %}
-        <a class="links" href="{% url 'login' %}">[ Login ]</a>
-        <a class="links" href="{% url 'signup' %}">[ Signup ]</a>
+        <a href="{% url 'login' %}">[ Login ]</a>
+        <a href="{% url 'signup' %}">[ Signup ]</a>
         {% endif %}
       </nav>
     </div>
