@@ -12,6 +12,7 @@
       <p>
         {{ lift.exercise }} - Reps: {{ lift.reps }} Weight: {{ lift.weight }}
         <a href="{% url 'lift_edit' pk=lift.pk %}">[edit]</a>
+        <a href="{% url 'lift_delete' pk=lift.pk %}">[delete]</a>
       </p>
       <p></p>
     </li>

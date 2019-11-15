@@ -5,7 +5,7 @@
     {% for workout in workouts %}
     <li>
       <a class="black-text" href="{% url 'workout_detail' pk=workout.pk %}"
-        >&#8226; [ {{ workout.name }} - {{ workout.muscle }} ]</a
+        >[ {{ workout.name }} - {{ workout.muscle }} ]</a
       >
     </li>
     {% endfor %}
