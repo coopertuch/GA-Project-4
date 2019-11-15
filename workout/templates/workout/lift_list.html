@@ -4,7 +4,7 @@
   <ul>
     {% for lift in lifts %}
     <li>
-      <a href="{% url 'lift_detail' pk=lift.pk %}"
+      <a class="black-text" href="{% url 'lift_detail' pk=lift.pk %}"
         >[ {{ lift.workout.muscle }} - {{ lift.exercise }} ]</a
       >
     </li>
