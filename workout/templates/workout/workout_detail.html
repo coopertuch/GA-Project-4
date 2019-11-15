@@ -10,7 +10,8 @@
     {% for lift in workout.lifts.all %}
     <li>
       <p>
-        {{ lift.exercise }} - Reps: {{ lift.reps }} Weight: {{ lift.weight }}
+        &#8226; {{ lift.exercise }} - Reps: {{ lift.reps }} Weight: {{
+        lift.weight }}
         <a href="{% url 'lift_edit' pk=lift.pk %}">[edit]</a>
         <a href="{% url 'lift_delete' pk=lift.pk %}">[delete]</a>
       </p>
