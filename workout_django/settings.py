@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'workout_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config(default='postgres://eyzehohtrzcugi:dd6ba29fa68b4641375463c7385bc78b80e6853e55a26a7c337a18fc91260417@ec2-174-129-253-174.compute-1.amazonaws.com:5432/dfqqjhtobl6ehm')
 
 
