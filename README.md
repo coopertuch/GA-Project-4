@@ -6,10 +6,11 @@ WeWorkout is an open forum for finding workouts, adding your own workouts, and a
 
 ## Planning & Examples:
 
-![Project Example 1](images/ProjectExample1.png);
-![Project Example 2](images/ProjectExample2.png);
-![Project Example 3](images/ProjectExample3.png);
-![Project Example 4](images/ProjectExample4.png);
+![Project Example 1](images/ProjectExample1.png)
+![Project Example 2](images/ProjectExample2.png)
+![Project Example 3](images/ProjectExample3.png)
+![Project Example 4](images/ProjectExample4.png)
+![Project Example 5](images/ProjectExample5.png)
 
 ## Current Features
 
