@@ -15,20 +15,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div class="navigation">
-      <a class="brand-logo" href="/">WeWorkout</a>
-      <nav class="right hide-on-med-and-down">
-        <a href="/">[ Workouts ]</a>
-        <a href="/lifts">[ Lifts ]</a>
-        {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">[ Log out, {{ user.username }} ]</a>
-        {% else %}
-        <a href="{% url 'login' %}">[ Login ]</a>
-        <a href="{% url 'signup' %}">[ Signup ]</a>
-        {% endif %}
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a class="brand-logo" href="/">WeWorkout</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/">[ Workouts ]</a></li>
+            <li><a href="/lifts">[ Lifts ]</a></li>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="{% url 'logout' %}">[ Log out, {{ user.username }} ]</a>
+            </li>
+            {% else %}
+            <li><a href="{% url 'login' %}">[ Login ]</a></li>
+            <li><a href="{% url 'signup' %}">[ Signup ]</a></li>
+            {% endif %}
+          </ul>
+        </div>
       </nav>
     </div>
-
     {% block content %} {% endblock %}
     <script
       type="text/javascript"
