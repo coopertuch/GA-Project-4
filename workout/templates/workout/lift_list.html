@@ -1,6 +1,6 @@
 {% extends 'workout/base.html' %} {% block content %}
 <div class="container">
-  <h2>Lifts<a href="{% url 'lift_create' %}"> [+]</a></h2>
+  <h4>Lifts<a href="{% url 'lift_create' %}"> [+]</a></h4>
   <ul>
     {% for lift in lifts %}
     <li>

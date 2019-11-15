@@ -1,16 +1,16 @@
 {% extends 'workout/base.html' %} {% block content %}
 <div class="container">
-  <h3>Workouts: <a href="{% url 'workout_create' %}">[+]</a></h3>
+  <h4>Workouts: <a href="{% url 'workout_create' %}">[+]</a></h4>
   <ul>
     {% for workout in workouts %}
     <li>
-      <a href="{% url 'workout_detail' pk=workout.pk %}"
+      <a class="#000000 black" href="{% url 'workout_detail' pk=workout.pk %}"
         >[ {{ workout.name }} - {{ workout.muscle }} ]</a
       >
     </li>
     {% endfor %}
   </ul>
-  <h3>Tips:</h3>
+  <h4>Tips:</h4>
   <ul>
     <li>
       3 Second Extension (Breathe Out) > Hold 1 > 3 Second Return (Breathe In) >
