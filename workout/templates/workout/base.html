@@ -2,7 +2,17 @@
 <html>
   <head>
     <title>WeWorkout</title>
-    <link rel="stylesheet" href="{% static 'css/workout.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'materialize/css/workout.css' %}"
+      media="screen,projection"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div class="navigation">
@@ -18,10 +28,13 @@
         <a class="links" href="{% url 'login' %}">[ Login ]</a>
         <a class="links" href="{% url 'signup' %}">[ Signup ]</a>
         {% endif %}
-        <!-- <a class="links" href="">[ Sign In ]</a> -->
       </nav>
     </div>
 
     {% block content %} {% endblock %}
+    <script
+      type="text/javascript"
+      src="{% static 'materialize/js/materialize.min.js' %}"
+    ></script>
   </body>
 </html>
