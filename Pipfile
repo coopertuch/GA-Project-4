@@ -12,6 +12,7 @@ django-extensions = "*"
 gunicorn = "*"
 django-heroku = "*"
 dj-database-url = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
